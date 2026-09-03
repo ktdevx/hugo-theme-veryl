@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://opensource.org/licenses/MIT"
 description = "分かりやすく、目的に集中できるWebサイトを構築するためのHugoテーマです。"
  homepage = "https://github.com/ktdevx/hugo-theme-veryl"
-min_version = "0.134.0"
+min_version = "0.133.1"
 
 [author]
   name = "Kaito Takemura"

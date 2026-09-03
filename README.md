@@ -6,7 +6,7 @@
 
 ## 必要環境
 
-- Hugoのバージョン: 初期実装後に確定予定
+- Hugoのバージョン: 0.133.1以上
 
 ## インストール
 
@@ -26,15 +26,20 @@ theme = "veryl"
 
 ## 開発
 
-リポジトリをクローンした後、`exampleSite/` からHugoの開発サーバーを起動します。
+リポジトリをクローンした後、Hugoの開発サーバーを起動します。
 
 ```sh
 git clone https://github.com/ktdevx/hugo-theme-veryl.git
-cd hugo-theme-veryl/exampleSite
 hugo server -s exampleSite --themesDir ../..
 ```
 
 `exampleSite/` は、Verylの設計思想と利用イメージを確認するためのデモサイトです。現在はテーマの紹介を1ページにまとめています。
+
+### デモサイトをGitHub Pagesで公開
+
+`main` ブランチへ push すると、GitHub Actions が `exampleSite/` をビルドし、 GitHub Pages へ公開されます。
+
+[Veryl デモサイト](https://ktdevx.github.io/hugo-theme-veryl/)
 
 ## 機能
 
