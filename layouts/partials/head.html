@@ -1,0 +1,12 @@
+<title>{{ block "title" . }}{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}{{ end }}</title>
+{{ with .Description | default site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }} RSS">{{ end }}
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<script>
+  (() => {
+    const saved = localStorage.getItem('veryl-theme');
+    const theme = saved === 'light' || saved === 'dark' ? saved : 'system';
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>

@@ -3,11 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ block "title" . }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    {{ partial "head.html" . }}
   </head>
   <body>
+    <a class="skip-link" href="#content">本文へ移動</a>
+    {{ partial "header.html" . }}
     <main>
-      {{ block "main" . }}{{ end }}
+      <div id="content" class="page-shell">
+        {{ block "main" . }}{{ end }}
+      </div>
     </main>
+    {{ partial "footer.html" . }}
+    <script src="{{ "js/theme.js" | relURL }}" defer></script>
   </body>
 </html>

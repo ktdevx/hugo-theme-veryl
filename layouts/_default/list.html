@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <header class="page-heading">
+    <p class="eyebrow">{{ if eq .Kind "section" }}記事一覧{{ else }}{{ .Kind }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  </header>
+  {{ if .Pages }}
+    <section class="listing" aria-label="記事">
+      {{ range .Paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}
+    </section>
+    {{ template "_internal/pagination.html" . }}
+  {{ else }}<p class="empty-state">まだ記事がありません。</p>{{ end }}
+{{ end }}

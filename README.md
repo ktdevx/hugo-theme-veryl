@@ -22,7 +22,18 @@ git submodule add https://github.com/ktdevx/hugo-theme-veryl.git themes/veryl
 theme = "veryl"
 ```
 
-テーマのAPIが固まり次第、インストール手順と設定項目を更新します。
+テーマの設定例は次のとおりです。
+
+```toml
+theme = "veryl"
+enableRobotsTXT = true
+
+[pagination]
+	pagerSize = 10
+
+[params]
+	mainSections = ["posts"]
+```
 
 ## 開発
 
@@ -43,7 +54,36 @@ hugo server -s exampleSite --themesDir ../..
 
 ## 機能
 
-対応機能、対応レイアウト、設定項目、Hugoの対応バージョンは、決まり次第ここに記載します。
+- 個人ブログ・技術ブログ向けのレスポンシブレイアウト
+- トップページ、記事一覧、記事詳細、固定ページ、カテゴリ、タグ、404ページ
+- ライト・ダーク・システム設定のテーマ切替（ブラウザに保存）
+- RSS、サイトマップ、robots.txtの生成
+- 外部ライブラリ不要、Hugo Extended限定機能への依存なし
+
+記事では次のFront Matterを利用できます。
+
+```yaml
+---
+title: "記事タイトル"
+date: 2026-09-01
+description: "記事の概要"
+categories: ["カテゴリ"]
+tags: ["タグ"]
+---
+```
+
+テーマ切替はヘッダー右側のアイコンメニューから、ライト・ダーク・システムを選択できます。
+
+### 記事セクション
+
+ホームの新着記事とヘッダーの「記事」リンクは、`params.mainSections` に指定したセクションを使用します。既定値は `["posts"]` です。
+
+```toml
+[params]
+	mainSections = ["articles"]
+```
+
+カテゴリ・タグへのリンクは、Hugo標準のtaxonomy設定とパーマリンク設定に従います。
 
 ## コントリビュート
 

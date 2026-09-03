@@ -3,7 +3,10 @@ languageCode = "ja"
 defaultContentLanguage = "ja"
 title = "Veryl"
 theme = "hugo-theme-veryl"
-disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+[pagination]
+  pagerSize = 10
 
 [params]
   description = "分かりやすく、目的に集中できるWebサイトを構築するためのHugoテーマです。"
+  mainSections = ["posts"]
