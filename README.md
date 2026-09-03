@@ -26,15 +26,15 @@ theme = "veryl"
 
 ## 開発
 
-リポジトリをクローンした後、テーマを使用するテストサイトからHugoの開発サーバーを起動します。
+リポジトリをクローンした後、`exampleSite/` からHugoの開発サーバーを起動します。
 
 ```sh
 git clone https://github.com/ktdevx/hugo-theme-veryl.git
-cd your-hugo-site
-hugo server --themesDir ../
+cd hugo-theme-veryl/exampleSite
+hugo server -s exampleSite --themesDir ../..
 ```
 
-テーマ本体の実装とあわせて、実行可能なサンプルサイトを追加する予定です。
+`exampleSite/` は、Verylの設計思想と利用イメージを確認するためのデモサイトです。現在はテーマの紹介を1ページにまとめています。
 
 ## 機能
 

@@ -18,3 +18,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# ExampleSite generated files
+/exampleSite/public/
+/exampleSite/resources/_gen/
