@@ -19,7 +19,7 @@
         <a href="{{ site.Home.RelPermalink }}">ホーム</a>
         {{ $mainSections := site.Params.mainSections | default (slice "posts") }}
         {{ with site.GetPage "section" (index $mainSections 0) }}<a href="{{ .RelPermalink }}">記事</a>{{ end }}
-        {{ with site.GetPage "about" }}<a href="{{ .RelPermalink }}">About</a>{{ end }}
+        {{ with site.GetPage "about" }}<a href="{{ .RelPermalink }}">テーマについて</a>{{ end }}
         <details class="theme-menu">
           <summary aria-label="表示テーマを変更" title="表示テーマを変更"><span aria-hidden="true">◐</span></summary>
           <div class="theme-options" role="group" aria-label="表示テーマ">
