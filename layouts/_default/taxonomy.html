@@ -1,13 +1,13 @@
 {{ define "main" }}
   <header class="page-heading">
-    <p class="eyebrow">{{ i18n "taxonomy" }}</p>
+    <p class="eyebrow"><span class="material-symbols-outlined meta-icon" aria-hidden="true">sell</span>{{ i18n "taxonomy" }}</p>
     <h1>{{ .Title }}</h1>
   </header>
   <div class="term-list">
     {{ range .Data.Terms.Alphabetical }}
       <a class="term-item" href="{{ .Page.RelPermalink }}">
         <strong>{{ .Page.Title }}</strong>
-        <span>{{ i18n "termCount" (dict "Count" .Count) }}</span>
+        <span class="term-count"><span class="material-symbols-outlined meta-icon" aria-hidden="true">numbers</span>{{ i18n "termCount" (dict "Count" .Count) }}</span>
       </a>
     {{ end }}
   </div>

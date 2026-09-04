@@ -1,7 +1,10 @@
 <nav class="breadcrumbs" aria-label="{{ i18n "breadcrumbs" }}">
   <ol class="breadcrumbs-list">
     <li class="breadcrumbs-item">
-      <a href="{{ site.Home.RelPermalink }}">{{ i18n "home" }}</a>
+      <a href="{{ site.Home.RelPermalink }}">
+        <span class="material-symbols-outlined breadcrumbs-home-icon" aria-hidden="true">home</span>
+        {{ i18n "home" }}
+      </a>
     </li>
     {{ range .Ancestors.Reverse }}
       {{ if not .IsHome }}

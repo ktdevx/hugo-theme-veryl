@@ -32,6 +32,14 @@
   translation: "{{ .Count }}件"
 - id: termArticlesLabel
   translation: "{{ .Title }}の記事"
+- id: pagination
+  translation: "ページネーション"
+- id: paginationPrevious
+  translation: "前へ"
+- id: paginationNext
+  translation: "次へ"
+- id: paginationPage
+  translation: "{{ .Page }}/{{ .Total }}ページ"
 - id: pageNotFound
   translation: "ページが見つかりません"
 - id: pageNotFoundLead

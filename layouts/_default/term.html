@@ -1,6 +1,6 @@
 {{ define "main" }}
   <header class="page-heading">
-    <p class="eyebrow">{{ .Data.Plural }}</p>
+    <p class="eyebrow"><span class="material-symbols-outlined meta-icon" aria-hidden="true">label</span>{{ .Data.Plural }}</p>
     <h1>{{ .Title }}</h1>
   </header>
   <section class="listing" aria-label="{{ i18n "termArticlesLabel" (dict "Title" .Title) }}">
@@ -8,5 +8,5 @@
       {{ partial "post-card.html" . }}
     {{ end }}
   </section>
-  {{ template "_internal/pagination.html" . }}
+  {{ partial "pagination.html" . }}
 {{ end }}

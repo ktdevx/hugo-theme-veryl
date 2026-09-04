@@ -32,6 +32,14 @@
   translation: "{{ .Count }} items"
 - id: termArticlesLabel
   translation: "Posts in {{ .Title }}"
+- id: pagination
+  translation: "Pagination"
+- id: paginationPrevious
+  translation: "Previous"
+- id: paginationNext
+  translation: "Next"
+- id: paginationPage
+  translation: "Page {{ .Page }} of {{ .Total }}"
 - id: pageNotFound
   translation: "Page not found"
 - id: pageNotFoundLead

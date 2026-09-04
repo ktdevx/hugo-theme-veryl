@@ -11,6 +11,7 @@
       <h1>{{ .Title }}</h1>
       {{ if eq .Type "posts" }}
         <p class="meta">
+          <span class="material-symbols-outlined meta-icon" aria-hidden="true">calendar_today</span>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
         </p>
       {{ end }}
@@ -18,6 +19,7 @@
     {{ .Content }}
     {{ with .GetTerms "categories" }}
       <footer class="article-tags" aria-label="{{ i18n "taxonomy" }}">
+        <span class="material-symbols-outlined meta-icon" aria-hidden="true">folder</span>
         {{ range . }}
           <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}
@@ -25,6 +27,7 @@
     {{ end }}
     {{ with .GetTerms "tags" }}
       <footer class="article-tags" aria-label="{{ i18n "taxonomy" }}">
+        <span class="material-symbols-outlined meta-icon" aria-hidden="true">local_offer</span>
         {{ range . }}
           <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}

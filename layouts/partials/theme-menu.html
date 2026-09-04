@@ -1,16 +1,16 @@
 <details class="theme-menu{{ with .class }} {{ . }}{{ end }}">
   <summary aria-label="{{ i18n "themeMenu" }}" title="{{ i18n "themeMenu" }}">
-    <span aria-hidden="true">◐</span>
+    <span class="material-symbols-outlined" aria-hidden="true">contrast</span>
   </summary>
   <div class="theme-options" role="group" aria-label="{{ i18n "themeGroup" }}">
     <button type="button" data-theme-choice="light">
-      <span aria-hidden="true">☼</span> {{ i18n "themeLight" }}
+      <span class="material-symbols-outlined" aria-hidden="true">light_mode</span> {{ i18n "themeLight" }}
     </button>
     <button type="button" data-theme-choice="dark">
-      <span aria-hidden="true">☾</span> {{ i18n "themeDark" }}
+      <span class="material-symbols-outlined" aria-hidden="true">dark_mode</span> {{ i18n "themeDark" }}
     </button>
     <button type="button" data-theme-choice="system">
-      <span aria-hidden="true">◌</span> {{ i18n "themeSystem" }}
+      <span class="material-symbols-outlined" aria-hidden="true">settings_brightness</span> {{ i18n "themeSystem" }}
     </button>
   </div>
 </details>

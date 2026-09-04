@@ -1,6 +1,7 @@
 <article class="post-card">
   <div>
     <p class="meta">
+      <span class="material-symbols-outlined meta-icon" aria-hidden="true">calendar_today</span>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
     </p>
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -12,6 +13,7 @@
   </div>
   {{ with .GetTerms "categories" }}
     <div class="tags" aria-label="{{ i18n "taxonomy" }}">
+      <span class="material-symbols-outlined meta-icon" aria-hidden="true">folder</span>
       {{ range . }}
         <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{ end }}
@@ -19,6 +21,7 @@
   {{ end }}
   {{ with .GetTerms "tags" }}
     <div class="tags" aria-label="{{ i18n "taxonomy" }}">
+      <span class="material-symbols-outlined meta-icon" aria-hidden="true">local_offer</span>
       {{ range . }}
         <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{ end }}
