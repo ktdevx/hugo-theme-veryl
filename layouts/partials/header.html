@@ -3,15 +3,16 @@
     <a class="site-brand" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
     <nav aria-label="メインナビゲーション">
       {{ $page := . }}
-      <details class="theme-menu theme-menu--mobile">
-        <summary aria-label="表示テーマを変更" title="表示テーマを変更"><span aria-hidden="true">◐</span></summary>
-        <div class="theme-options" role="group" aria-label="表示テーマ">
-          <button type="button" data-theme-choice="light"><span aria-hidden="true">☼</span> ライト</button>
-          <button type="button" data-theme-choice="dark"><span aria-hidden="true">☾</span> ダーク</button>
-          <button type="button" data-theme-choice="system"><span aria-hidden="true">◌</span> システム</button>
-        </div>
-      </details>
-      <button class="menu-toggle" type="button" data-nav-toggle aria-controls="site-menu" aria-expanded="false" aria-label="メニューを開く" title="メニューを開く">
+      {{ partial "theme-menu.html" (dict "class" "theme-menu--mobile") }}
+      <button
+        class="menu-toggle"
+        type="button"
+        data-nav-toggle
+        aria-controls="site-menu"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        title="メニューを開く"
+      >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -24,14 +25,7 @@
           {{ end }}
           <a href="{{ $href }}"{{ if or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
         {{ end }}
-        <details class="theme-menu">
-          <summary aria-label="表示テーマを変更" title="表示テーマを変更"><span aria-hidden="true">◐</span></summary>
-          <div class="theme-options" role="group" aria-label="表示テーマ">
-            <button type="button" data-theme-choice="light"><span aria-hidden="true">☼</span> ライト</button>
-            <button type="button" data-theme-choice="dark"><span aria-hidden="true">☾</span> ダーク</button>
-            <button type="button" data-theme-choice="system"><span aria-hidden="true">◌</span> システム</button>
-          </div>
-        </details>
+        {{ partial "theme-menu.html" (dict "class" "") }}
       </div>
     </nav>
   </div>

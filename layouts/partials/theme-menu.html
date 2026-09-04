@@ -1,0 +1,16 @@
+<details class="theme-menu{{ with .class }} {{ . }}{{ end }}">
+  <summary aria-label="表示テーマを変更" title="表示テーマを変更">
+    <span aria-hidden="true">◐</span>
+  </summary>
+  <div class="theme-options" role="group" aria-label="表示テーマ">
+    <button type="button" data-theme-choice="light">
+      <span aria-hidden="true">☼</span> ライト
+    </button>
+    <button type="button" data-theme-choice="dark">
+      <span aria-hidden="true">☾</span> ダーク
+    </button>
+    <button type="button" data-theme-choice="system">
+      <span aria-hidden="true">◌</span> システム
+    </button>
+  </div>
+</details>

@@ -1,16 +1,34 @@
 {{ define "main" }}
   <article class="article">
     <header class="article-header">
-      <p class="eyebrow">{{ if eq .Type "posts" }}記事{{ else }}ページ{{ end }}</p>
+      <p class="eyebrow">
+        {{ if eq .Type "posts" }}
+          記事
+        {{ else }}
+          ページ
+        {{ end }}
+      </p>
       <h1>{{ .Title }}</h1>
-      {{ if eq .Type "posts" }}<p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time></p>{{ end }}
+      {{ if eq .Type "posts" }}
+        <p class="meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+        </p>
+      {{ end }}
     </header>
     {{ .Content }}
     {{ with .GetTerms "categories" }}
-      <footer class="article-tags" aria-label="カテゴリ">{{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</footer>
+      <footer class="article-tags" aria-label="カテゴリ">
+        {{ range . }}
+          <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </footer>
     {{ end }}
     {{ with .GetTerms "tags" }}
-      <footer class="article-tags" aria-label="タグ">{{ range . }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</footer>
+      <footer class="article-tags" aria-label="タグ">
+        {{ range . }}
+          <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </footer>
     {{ end }}
   </article>
 {{ end }}

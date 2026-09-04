@@ -1,6 +1,14 @@
 {{ define "main" }}
-  <header class="page-heading"><p class="eyebrow">分類</p><h1>{{ .Title }}</h1></header>
+  <header class="page-heading">
+    <p class="eyebrow">分類</p>
+    <h1>{{ .Title }}</h1>
+  </header>
   <div class="term-list">
-    {{ range .Data.Terms.Alphabetical }}<a class="term-item" href="{{ .Page.RelPermalink }}"><strong>{{ .Page.Title }}</strong><span>{{ .Count }}件</span></a>{{ end }}
+    {{ range .Data.Terms.Alphabetical }}
+      <a class="term-item" href="{{ .Page.RelPermalink }}">
+        <strong>{{ .Page.Title }}</strong>
+        <span>{{ .Count }}件</span>
+      </a>
+    {{ end }}
   </div>
 {{ end }}
