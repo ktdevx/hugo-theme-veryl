@@ -9,6 +9,7 @@ enableRobotsTXT = true
 
 [params]
   description = "分かりやすく、目的に集中できるWebサイトを構築するためのHugoテーマです。"
+  breadcrumbs = true
   mainSections = ["posts"]
 
 [menus]

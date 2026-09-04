@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="{{ site.Language.LanguageCode | default "ja" }}">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "head.html" . }}
   </head>
   <body>
@@ -10,6 +8,9 @@
     {{ partial "header.html" . }}
     <main>
       <div id="content" class="page-shell">
+        {{ if and (ne site.Params.breadcrumbs false) (not .IsHome) (ne .Kind "404") }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
         {{ block "main" . }}{{ end }}
       </div>
     </main>

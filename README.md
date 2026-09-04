@@ -32,6 +32,7 @@ enableRobotsTXT = true
 	pagerSize = 10
 
 [params]
+	breadcrumbs = true
 	mainSections = ["posts"]
 ```
 
@@ -84,6 +85,15 @@ tags: ["タグ"]
 ```
 
 カテゴリ・タグへのリンクは、Hugo標準のtaxonomy設定とパーマリンク設定に従います。
+
+### パンくずリスト
+
+パンくずリストは、`params.breadcrumbs` で表示・非表示を切り替えられます。既定値は `true` です。
+
+```toml
+[params]
+	breadcrumbs = false
+```
 
 ## コントリビュート
 

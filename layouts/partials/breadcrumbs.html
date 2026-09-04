@@ -1,0 +1,17 @@
+<nav class="breadcrumbs" aria-label="パンくずリスト">
+  <ol class="breadcrumbs-list">
+    <li class="breadcrumbs-item">
+      <a href="{{ site.Home.RelPermalink }}">TOP</a>
+    </li>
+    {{ range .Ancestors.Reverse }}
+      {{ if not .IsHome }}
+        <li class="breadcrumbs-item">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+    <li class="breadcrumbs-item" aria-current="page">
+      <span>{{ .LinkTitle }}</span>
+    </li>
+  </ol>
+</nav>
