@@ -10,3 +10,17 @@ enableRobotsTXT = true
 [params]
   description = "分かりやすく、目的に集中できるWebサイトを構築するためのHugoテーマです。"
   mainSections = ["posts"]
+
+[menus]
+  [[menus.main]]
+    name = "ホーム"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "記事"
+    pageRef = "/posts"
+    weight = 20
+  [[menus.main]]
+    name = "テーマについて"
+    pageRef = "/about"
+    weight = 30
