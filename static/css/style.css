@@ -104,6 +104,10 @@ summary:focus-visible {
 }
 
 .header-inner {
+  width: min(100% - 2rem, 75rem);
+}
+
+.header-inner {
   min-height: 4rem;
   display: flex;
   align-items: center;
@@ -359,8 +363,11 @@ main {
 .intro,
 .page-heading,
 .article,
-.not-found {
+.not-found,
+.listing,
+.term-list {
   max-width: 46rem;
+  margin-inline: auto;
 }
 
 .intro {
@@ -629,6 +636,10 @@ main {
   .footer-inner,
   .page-shell {
     width: min(100% - 1.25rem, 70rem);
+  }
+
+  .header-inner {
+    width: min(100% - 1.25rem, 75rem);
   }
 
   .header-inner {
