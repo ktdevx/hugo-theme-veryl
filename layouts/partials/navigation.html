@@ -1,0 +1,29 @@
+<nav aria-label="{{ i18n "mainNavigation" }}">
+  {{ $page := . }}
+  {{ partial "theme-menu.html" (dict "class" "theme-menu--mobile") }}
+  {{ partial "language-menu.html" (dict "class" "language-menu--mobile" "page" .) }}
+  <button
+    class="menu-toggle"
+    type="button"
+    data-nav-toggle
+    aria-controls="site-menu"
+    aria-expanded="false"
+    aria-label="{{ i18n "openMenu" }}"
+    title="{{ i18n "openMenu" }}"
+  >
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+  <div class="nav-links" id="site-menu" data-nav-panel aria-hidden="false">
+    {{ range site.Menus.main }}
+      {{ $href := .URL }}
+      {{ with .Page }}
+        {{ $href = .RelPermalink }}
+      {{ end }}
+      <a href="{{ $href }}"{{ if or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+    {{ partial "theme-menu.html" (dict "class" "") }}
+    {{ partial "language-menu.html" (dict "class" "" "page" .) }}
+  </div>
+</nav>

@@ -8,7 +8,7 @@
   {{ $pages := where site.RegularPages "Section" "in" $mainSections }}
   {{ if $pages }}
     <section class="listing" aria-labelledby="latest-heading">
-      <div class="section-heading"><h2 id="latest-heading">新着記事</h2>{{ with site.GetPage "section" (index $mainSections 0) }}<a href="{{ .RelPermalink }}">すべて見る</a>{{ end }}</div>
+      <div class="section-heading"><h2 id="latest-heading">{{ i18n "latestArticles" }}</h2>{{ with site.GetPage "section" (index $mainSections 0) }}<a href="{{ .RelPermalink }}">{{ i18n "viewAll" }}</a>{{ end }}</div>
       {{ range first 5 (sort $pages "Date" "desc") }}{{ partial "post-card.html" . }}{{ end }}
     </section>
   {{ end }}

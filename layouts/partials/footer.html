@@ -1,6 +1,6 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <span>&copy; {{ now.Year }} {{ site.Title }}</span>
-    <a href="{{ "index.xml" | relURL }}">RSS</a>
+    {{ with .OutputFormats.Get "RSS" }}<a href="{{ .RelPermalink }}">{{ i18n "rss" }}</a>{{ end }}
   </div>
 </footer>

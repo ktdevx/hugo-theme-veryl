@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="{{ site.Language.LanguageCode | default "ja" }}">
+<html lang="{{ site.Language.LanguageCode | default site.Language.Lang | default "ja" }}">
   <head>
     {{ partial "head.html" . }}
   </head>
   <body>
-    <a class="skip-link" href="#content">本文へ移動</a>
+    <a class="skip-link" href="#content">{{ i18n "skipToContent" }}</a>
     {{ partial "header.html" . }}
     <main>
       <div id="content" class="page-shell">

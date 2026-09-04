@@ -58,6 +58,8 @@ hugo server -s exampleSite --themesDir ../..
 - 個人ブログ・技術ブログ向けのレスポンシブレイアウト
 - トップページ、記事一覧、記事詳細、固定ページ、カテゴリ、タグ、404ページ
 - ライト・ダーク・システム設定のテーマ切替（ブラウザに保存）
+- Hugo i18n による UI 文言の多言語化
+- 言語切替 UI と多言語デモ用 exampleSite
 - RSS、サイトマップ、robots.txtの生成
 - 外部ライブラリ不要、Hugo Extended限定機能への依存なし
 
@@ -93,6 +95,24 @@ tags: ["タグ"]
 ```toml
 [params]
 	breadcrumbs = false
+```
+
+### 多言語対応
+
+Veryl は Hugo の多言語機能に対応しています。UI 文言は `i18n/` 配下の翻訳テーブルで管理し、言語ごとのメニューや翻訳ページは Hugo の `languages` 設定で切り替えます。
+
+exampleSite では日本語と英語の 2 言語構成を用意しています。`exampleSite/hugo.toml` の `languages` ブロックと、`exampleSite/content/*.en.md` のような翻訳ファイルを参考にしてください。
+
+```toml
+defaultContentLanguage = "ja"
+
+[languages]
+	[languages.ja]
+		languageName = "日本語"
+		weight = 1
+	[languages.en]
+		languageName = "English"
+		weight = 2
 ```
 
 ## コントリビュート

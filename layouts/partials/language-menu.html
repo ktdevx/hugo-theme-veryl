@@ -1,0 +1,12 @@
+{{ if and hugo.IsMultilingual (gt (len .page.AllTranslations) 1) }}
+  <details class="language-menu{{ with .class }} {{ . }}{{ end }}">
+    <summary aria-label="{{ i18n "switchLanguage" }}" title="{{ i18n "switchLanguage" }}">
+      <span aria-hidden="true">{{ site.Language.LanguageName }}</span>
+    </summary>
+    <div class="language-options" role="group" aria-label="{{ i18n "switchLanguage" }}">
+      {{ range .page.AllTranslations }}
+        <a href="{{ .RelPermalink }}"{{ if eq .Language.Lang $.page.Language.Lang }} aria-current="page"{{ end }}>{{ .Language.LanguageName }}</a>
+      {{ end }}
+    </div>
+  </details>
+{{ end }}

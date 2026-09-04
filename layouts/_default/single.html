@@ -3,28 +3,28 @@
     <header class="article-header">
       <p class="eyebrow">
         {{ if eq .Type "posts" }}
-          記事
+          {{ i18n "article" }}
         {{ else }}
-          ページ
+          {{ i18n "page" }}
         {{ end }}
       </p>
       <h1>{{ .Title }}</h1>
       {{ if eq .Type "posts" }}
         <p class="meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
         </p>
       {{ end }}
     </header>
     {{ .Content }}
     {{ with .GetTerms "categories" }}
-      <footer class="article-tags" aria-label="カテゴリ">
+      <footer class="article-tags" aria-label="{{ i18n "taxonomy" }}">
         {{ range . }}
           <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}
       </footer>
     {{ end }}
     {{ with .GetTerms "tags" }}
-      <footer class="article-tags" aria-label="タグ">
+      <footer class="article-tags" aria-label="{{ i18n "taxonomy" }}">
         {{ range . }}
           <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{ end }}

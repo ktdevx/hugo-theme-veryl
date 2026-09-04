@@ -4,6 +4,43 @@ defaultContentLanguage = "ja"
 title = "Veryl"
 theme = "hugo-theme-veryl"
 enableRobotsTXT = true
+[languages]
+  [languages.ja]
+    languageCode = "ja"
+    languageName = "日本語"
+    title = "Veryl"
+    weight = 1
+    [languages.ja.menus]
+      [[languages.ja.menus.main]]
+        name = "ホーム"
+        pageRef = "/"
+        weight = 10
+      [[languages.ja.menus.main]]
+        name = "記事"
+        pageRef = "/posts"
+        weight = 20
+      [[languages.ja.menus.main]]
+        name = "テーマについて"
+        pageRef = "/about"
+        weight = 30
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    title = "Veryl"
+    weight = 2
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = "Home"
+        pageRef = "/"
+        weight = 10
+      [[languages.en.menus.main]]
+        name = "Posts"
+        pageRef = "/posts"
+        weight = 20
+      [[languages.en.menus.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 30
 [pagination]
   pagerSize = 10
 
@@ -11,17 +48,3 @@ enableRobotsTXT = true
   description = "分かりやすく、目的に集中できるWebサイトを構築するためのHugoテーマです。"
   breadcrumbs = true
   mainSections = ["posts"]
-
-[menus]
-  [[menus.main]]
-    name = "ホーム"
-    pageRef = "/"
-    weight = 10
-  [[menus.main]]
-    name = "記事"
-    pageRef = "/posts"
-    weight = 20
-  [[menus.main]]
-    name = "テーマについて"
-    pageRef = "/about"
-    weight = 30

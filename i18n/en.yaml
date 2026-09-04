@@ -1,0 +1,48 @@
+- id: skipToContent
+  translation: "Skip to content"
+- id: mainNavigation
+  translation: "Main navigation"
+- id: openMenu
+  translation: "Open menu"
+- id: themeMenu
+  translation: "Change theme"
+- id: themeGroup
+  translation: "Theme"
+- id: themeLight
+  translation: "Light"
+- id: themeDark
+  translation: "Dark"
+- id: themeSystem
+  translation: "System"
+- id: breadcrumbs
+  translation: "Breadcrumbs"
+- id: home
+  translation: "Home"
+- id: articles
+  translation: "Articles"
+- id: article
+  translation: "Article"
+- id: page
+  translation: "Page"
+- id: noArticles
+  translation: "No articles yet."
+- id: taxonomy
+  translation: "Taxonomy"
+- id: termCount
+  translation: "{{ .Count }} items"
+- id: termArticlesLabel
+  translation: "Posts in {{ .Title }}"
+- id: pageNotFound
+  translation: "Page not found"
+- id: pageNotFoundLead
+  translation: "The page may have been moved or deleted."
+- id: backHome
+  translation: "Back to home"
+- id: latestArticles
+  translation: "Latest articles"
+- id: viewAll
+  translation: "View all"
+- id: rss
+  translation: "RSS"
+- id: switchLanguage
+  translation: "Switch language"

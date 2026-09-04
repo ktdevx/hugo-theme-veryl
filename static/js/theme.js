@@ -13,6 +13,20 @@
     element.style.zIndex = '';
   };
 
+  const closeDetails = (detailsElement) => {
+    if (detailsElement && detailsElement.open) {
+      detailsElement.removeAttribute('open');
+    }
+  };
+
+  const closeOtherMenus = (exceptElement) => {
+    document.querySelectorAll('details.theme-menu, details.language-menu').forEach((detailsElement) => {
+      if (detailsElement !== exceptElement) {
+        closeDetails(detailsElement);
+      }
+    });
+  };
+
   const applyTheme = (theme) => {
     root.dataset.theme = theme;
     choices.forEach((choice) => {
@@ -36,6 +50,7 @@
   const navToggle = document.querySelector('[data-nav-toggle]');
   const navPanel = document.querySelector('[data-nav-panel]');
   const mobileThemeMenu = document.querySelector('.theme-menu--mobile');
+  const mobileLanguageMenu = document.querySelector('.language-menu--mobile');
   const mobileMedia = window.matchMedia('(max-width: 40rem)');
 
   if (navToggle && navPanel) {
@@ -55,19 +70,24 @@
     };
 
     const closeMobileThemeMenu = () => {
-      if (mobileThemeMenu && mobileThemeMenu.open) {
-        mobileThemeMenu.removeAttribute('open');
-      }
+      closeDetails(mobileThemeMenu);
+    };
+
+    const closeMobileLanguageMenu = () => {
+      closeDetails(mobileLanguageMenu);
     };
 
     navToggle.addEventListener('click', () => {
       const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      if (!isOpen) closeMobileThemeMenu();
+      if (!isOpen) closeOtherMenus();
       setNavOpen(!isOpen);
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeNav();
+      if (event.key === 'Escape') {
+        closeNav();
+        closeOtherMenus();
+      }
     });
 
     navPanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
@@ -87,16 +107,25 @@
     syncNav();
   }
 
-  if (mobileThemeMenu) {
-    mobileThemeMenu.addEventListener('toggle', () => {
-      if (mobileThemeMenu.open) {
-        if (navToggle && navToggle.getAttribute('aria-expanded') === 'true') {
-          navToggle.click();
-        }
-        bringToFront(mobileThemeMenu.querySelector('.theme-options'));
+  document.querySelectorAll('details.theme-menu, details.language-menu').forEach((detailsElement) => {
+    detailsElement.addEventListener('toggle', () => {
+      if (!detailsElement.open) {
+        resetStacking(detailsElement.querySelector('.theme-options, .language-options'));
+        return;
+      }
+
+      if (navToggle && navToggle.getAttribute('aria-expanded') === 'true') {
+        navToggle.click();
+      }
+
+      closeOtherMenus(detailsElement);
+
+      const menuPanel = detailsElement.querySelector('.theme-options, .language-options');
+      if (menuPanel) {
+        bringToFront(menuPanel);
       }
     });
-  }
+  });
 
   applyTheme(localStorage.getItem('veryl-theme') || 'system');
 })();

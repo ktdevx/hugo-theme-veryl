@@ -1,16 +1,16 @@
 <details class="theme-menu{{ with .class }} {{ . }}{{ end }}">
-  <summary aria-label="表示テーマを変更" title="表示テーマを変更">
+  <summary aria-label="{{ i18n "themeMenu" }}" title="{{ i18n "themeMenu" }}">
     <span aria-hidden="true">◐</span>
   </summary>
-  <div class="theme-options" role="group" aria-label="表示テーマ">
+  <div class="theme-options" role="group" aria-label="{{ i18n "themeGroup" }}">
     <button type="button" data-theme-choice="light">
-      <span aria-hidden="true">☼</span> ライト
+      <span aria-hidden="true">☼</span> {{ i18n "themeLight" }}
     </button>
     <button type="button" data-theme-choice="dark">
-      <span aria-hidden="true">☾</span> ダーク
+      <span aria-hidden="true">☾</span> {{ i18n "themeDark" }}
     </button>
     <button type="button" data-theme-choice="system">
-      <span aria-hidden="true">◌</span> システム
+      <span aria-hidden="true">◌</span> {{ i18n "themeSystem" }}
     </button>
   </div>
 </details>

@@ -3,7 +3,7 @@
     <p class="eyebrow">{{ .Data.Plural }}</p>
     <h1>{{ .Title }}</h1>
   </header>
-  <section class="listing" aria-label="{{ .Title }}の記事">
+  <section class="listing" aria-label="{{ i18n "termArticlesLabel" (dict "Title" .Title) }}">
     {{ range .Paginator.Pages }}
       {{ partial "post-card.html" . }}
     {{ end }}
