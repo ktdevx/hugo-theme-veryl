@@ -7,10 +7,10 @@
     <a class="skip-link" href="#content">{{ i18n "skipToContent" }}</a>
     {{ partial "header.html" . }}
     <main>
-      <div id="content" class="page-shell">
-        {{ if and (ne site.Params.breadcrumbs false) (not .IsHome) (ne .Kind "404") }}
-          {{ partial "breadcrumbs.html" . }}
-        {{ end }}
+      {{ if and (ne site.Params.breadcrumbs false) (not .IsHome) (ne .Kind "404") }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <div id="content" class="page-shell container">
         {{ block "main" . }}{{ end }}
       </div>
     </main>

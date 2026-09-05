@@ -51,7 +51,7 @@
   const navPanel = document.querySelector('[data-nav-panel]');
   const mobileThemeMenu = document.querySelector('.theme-menu--mobile');
   const mobileLanguageMenu = document.querySelector('.language-menu--mobile');
-  const mobileMedia = window.matchMedia('(max-width: 40rem)');
+  const mobileMedia = window.matchMedia('(max-width: 600px)');
 
   if (navToggle && navPanel) {
     const setNavOpen = (isOpen) => {

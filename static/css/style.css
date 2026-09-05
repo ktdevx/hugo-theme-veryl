@@ -99,7 +99,7 @@ summary:focus-visible {
 .header-inner,
 .footer-inner,
 .page-shell {
-  width: min(100% - 2rem, 70rem);
+  width: min(100% - 2rem, 75rem);
   margin-inline: auto;
 }
 
@@ -289,27 +289,89 @@ main {
 }
 
 .page-shell {
-  padding-block: 3rem;
+  padding-block: 1rem 3rem;
+}
+
+:root {
+  --container_size: 1200px;
 }
 
 .breadcrumbs {
-  margin-bottom: .85rem;
+  display: block;
+  border: 0;
   color: var(--text-muted);
   font-size: .75rem;
-  line-height: 1.4;
-  letter-spacing: .06em;
+  line-height: 1.1;
+  letter-spacing: .08em;
   text-transform: uppercase;
+}
+
+.breadcrumbs {
+  margin: 0 auto;
+  padding: 8px 0;
+  position: relative;
 }
 
 .breadcrumbs-list {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
-  gap: 0;
-  margin: 0;
-  padding: 0;
+  gap: 0.5em;
+  margin: 0 auto;
   list-style: none;
+  font-size: 10px;
 }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container_padding, 0);
+  padding-right: var(--container_padding, 0);
+  max-width: calc(var(--container_size, 0px) + var(--container_padding, 0px) * 2);
+}
+
+:root {
+  --container_padding: 4vw;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --container_padding: 48px;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --container_padding: 32px;
+  }
+}
+
+@media (min-width: 600px) {
+  .breadcrumbs-list {
+    font-size: 11px;
+  }
+}
+
+
+/* @media (max-width: 64rem) {
+  .breadcrumb-shell {
+    --breadcrumb-inline-padding: 2rem;
+  }
+
+  .breadcrumbs-list {
+    width: calc(var(--container_size, 0px) + var(--breadcrumb-inline-padding, 0px) * 2);
+  }
+}
+
+@media (max-width: 48rem) {
+  .breadcrumb-shell {
+    --breadcrumb-inline-padding: clamp(15px, 4vw, 32px);
+  }
+
+  .breadcrumbs-list {
+    width: calc(var(--container_size, 0px) + var(--breadcrumb-inline-padding, 0px) * 2);
+  }
+} */
 
 .breadcrumbs-item {
   display: inline-flex;
@@ -319,22 +381,29 @@ main {
 
 .breadcrumbs-item + .breadcrumbs-item::before {
   content: ">";
-  margin-inline: .5rem;
+  margin-inline: .25rem .15rem;
+  font-size: .75rem;
   color: var(--text-muted);
-  opacity: .8;
+  opacity: .55;
 }
 
 .breadcrumbs-home-icon {
-  margin-right: .25rem;
+  margin-right: .08rem;
+  font-size: .78rem;
 }
 
 .breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  gap: .08rem;
+  padding-block: 0;
   color: inherit;
   text-decoration: none;
+  transition: opacity .2s ease;
 }
 
 .breadcrumbs a:hover {
-  color: var(--accent);
+  opacity: .8;
 }
 
 .breadcrumbs [aria-current="page"] {
@@ -631,7 +700,7 @@ main {
 .pagination-link-icon {
   margin-inline: .25rem;
 }
-@media (max-width: 40rem) {
+@media (max-width: 600px) {
   .header-inner,
   .footer-inner,
   .page-shell {
