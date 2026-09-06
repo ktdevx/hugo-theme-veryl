@@ -1,4 +1,4 @@
-<nav aria-label="{{ i18n "mainNavigation" }}">
+<nav id="site-navigation" class="site-navigation" aria-label="{{ i18n "mainNavigation" }}">
   {{ $page := . }}
   {{ partial "theme-menu.html" (dict "class" "theme-menu--mobile") }}
   {{ partial "language-menu.html" (dict "class" "language-menu--mobile" "page" .) }}

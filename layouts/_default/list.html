@@ -1,13 +1,15 @@
 {{ define "main" }}
-  <header class="page-heading">
-    <p class="eyebrow"><span class="material-symbols-outlined meta-icon" aria-hidden="true">article</span>{{ if eq .Kind "section" }}{{ i18n "articles" }}{{ else }}{{ .Kind }}{{ end }}</p>
-    <h1>{{ .Title }}</h1>
-    {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
-  </header>
-  {{ if .Pages }}
-    <section class="listing" aria-label="{{ i18n "articles" }}">
-      {{ range .Paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}
-    </section>
-    {{ partial "pagination.html" . }}
-  {{ else }}<p class="empty-state">{{ i18n "noArticles" }}</p>{{ end }}
+  <div class="article">
+    <header class="page-heading">
+      <p class="eyebrow"><span class="material-symbols-outlined meta-icon" aria-hidden="true">article</span>{{ if eq .Kind "section" }}{{ i18n "articles" }}{{ else }}{{ .Kind }}{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+    </header>
+    {{ if .Pages }}
+      <section class="listing" aria-label="{{ i18n "articles" }}">
+        {{ range .Paginator.Pages }}{{ partial "post-card.html" . }}{{ end }}
+      </section>
+      {{ partial "pagination.html" . }}
+    {{ else }}<p class="empty-state">{{ i18n "noArticles" }}</p>{{ end }}
+  </div>
 {{ end }}

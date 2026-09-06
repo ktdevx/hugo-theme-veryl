@@ -10,7 +10,7 @@
       {{ if and (ne site.Params.breadcrumbs false) (not .IsHome) (ne .Kind "404") }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
-      <div id="content" class="page-shell container">
+      <div id="content" class="content container">
         {{ block "main" . }}{{ end }}
       </div>
     </main>

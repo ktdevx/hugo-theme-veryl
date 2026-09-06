@@ -1,15 +1,17 @@
 {{ define "main" }}
-  <section class="intro">
-    <p class="eyebrow">{{ site.Title }}</p>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </section>
-  {{ $mainSections := site.Params.mainSections | default (slice "posts") }}
-  {{ $pages := where site.RegularPages "Section" "in" $mainSections }}
-  {{ if $pages }}
-    <section class="listing" aria-labelledby="latest-heading">
-      <div class="section-heading"><h2 id="latest-heading">{{ i18n "latestArticles" }}</h2>{{ with site.GetPage "section" (index $mainSections 0) }}<a href="{{ .RelPermalink }}">{{ i18n "viewAll" }}</a>{{ end }}</div>
-      {{ range first 5 (sort $pages "Date" "desc") }}{{ partial "post-card.html" . }}{{ end }}
+  <div class="article">
+    <section class="intro">
+      <p class="eyebrow">{{ site.Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
     </section>
-  {{ end }}
+    {{ $mainSections := site.Params.mainSections | default (slice "posts") }}
+    {{ $pages := where site.RegularPages "Section" "in" $mainSections }}
+    {{ if $pages }}
+      <section class="listing" aria-labelledby="latest-heading">
+        <div class="section-heading"><h2 id="latest-heading">{{ i18n "latestArticles" }}</h2>{{ with site.GetPage "section" (index $mainSections 0) }}<a href="{{ .RelPermalink }}">{{ i18n "viewAll" }}</a>{{ end }}</div>
+        {{ range first 5 (sort $pages "Date" "desc") }}{{ partial "post-card.html" . }}{{ end }}
+      </section>
+    {{ end }}
+  </div>
 {{ end }}
